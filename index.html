@@ -4,25 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Piston.ca – Stone Masonry Ontario</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"> -->
   <style>
-    :root {
-      --stone:       #d4c9b0;
-      --stone-dark:  #b8a98a;
-      --stone-light: #f0ece2;
-      --charcoal:    #2a2420;
-      --brown:       #7a4f2e;
-      --grey:        #8c8070;
-      --cream:       #f5f0e8;
-      --ink:         #1a1210;
-    }
+  :root {
+  --stone:       #cdcfd0;   /* light cool grey — text, borders */
+  --stone-dark:  #a5a7aa;   /* mid grey — secondary text */
+  --stone-light: #cacbcd;   /* soft grey — card backgrounds */
+  --charcoal:    #2c2829;   /* main dark background */
+  --brown:       #7a7a7a;   
+  --grey:        #a5a7aa;   /* cool mid grey */
+  --cream:       #3a3536;   /* slightly lighter than charcoal — section contrast */
+  --ink:         #1a1718;   /* deepest dark — footer */
+  --logo-dark:   #2c2829;
+}
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Crimson Text', Georgia, serif;
+      font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 1.4rem; letter-spacing: 0.1em;
       background: var(--cream);
       color: var(--charcoal);
       overflow-x: hidden;
@@ -40,17 +44,19 @@
 
     /* ── NAV ── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: linear-gradient(to right, rgba(5, 5, 5, 1), #2a2420);
-      border-bottom: 3px solid var(--brown);
-      padding: 0 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(rgba(10, 9, 9, 0.979), rgba(26, 23, 24, 0.85)), url('background-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  border-bottom: 3px solid var(--brown);
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
 
     .nav-logo {
       display: flex;
@@ -66,7 +72,7 @@
     }
 
     .nav-logo-text {
-      font-family: 'Cinzel', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: 1.15rem;
       font-weight: 700;
       color: var(--stone);
@@ -97,7 +103,7 @@
     }
 
     nav ul a {
-      font-family: 'Cinzel', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: 0.75rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -159,7 +165,7 @@
     }
 
     .mobile-menu a {
-      font-family: 'Cinzel', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: 0.9rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -191,14 +197,16 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: var(--charcoal);
+      background-image: url('background-hero.jpg');
+        background-size: cover;
+  background-position: center;
     }
 
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background-image:
+      /* background-image:
         linear-gradient(rgba(10, 11, 10), rgba(10, 11, 10)),
         repeating-linear-gradient(
           0deg,
@@ -213,7 +221,7 @@
           transparent 119px,
           rgba(212,201,176,0.06) 119px,
           rgba(212,201,176,0.06) 120px
-        );
+        ); */
     }
 
     .hero-content {
@@ -238,10 +246,10 @@
     }
 
     .hero h1 {
-      font-family: 'Cinzel', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: clamp(2.4rem, 6vw, 4.2rem);
       font-weight: 900;
-      color: var(--stone);
+      color: var(--ink);
       letter-spacing: 0.06em;
       line-height: 1.1;
       margin-bottom: 16px;
@@ -251,12 +259,32 @@
     .hero h1 em {
       display: block;
       font-style: normal;
-      color: var(--brown);
+      color: var(--charcoal);
+       margin-top: 16px;
     }
+
+    .logo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid var(--ink);
+  padding: 7px 20px;
+  text-decoration: none;
+  background: transparent;
+}
+
+.logo-badge span {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #cdcfd0;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
 
     .hero-sub {
       font-size: 1.25rem;
-      color: var(--stone-dark);
+      color: var(--charcoal);
       margin-bottom: 12px;
       letter-spacing: 0.04em;
       animation: fadeUp 0.9s 0.35s ease both;
@@ -266,7 +294,7 @@
       font-size: 0.9rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--grey);
+      color: var(--charcoal);
       margin-bottom: 40px;
       animation: fadeUp 0.9s 0.45s ease both;
     }
@@ -278,12 +306,12 @@
 
     .hero-cta {
       display: inline-block;
-      font-family: 'Cinzel', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: 0.85rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--cream);
-      background: var(--brown);
+      color:  #3A3536;
+      background: #D6D6D6;
       padding: 16px 44px;
       border: 2px solid var(--brown);
       text-decoration: none;
@@ -292,17 +320,18 @@
     }
 
     .hero-cta:hover {
-      background: transparent;
-      color: var(--brown);
+      background: #B3471D;
+  color: #EBEBEB;
+  border-color: #cdcfd0;
     }
 
     .hero-divider {
       position: absolute;
       bottom: 0;
       left: 0; right: 0;
-      height: 48px;
-      background: var(--cream);
-      clip-path: polygon(0 100%, 100% 100%, 100% 0);
+      height: 4px;
+      background: var(--ink);
+      /* clip-path: polygon(0 100%, 100% 100%, 100% 0); */
     }
 
     /* ── SECTION COMMON ── */
@@ -313,16 +342,16 @@
     }
 
     .section-label {
-      font-family: 'Cinzel', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: 0.7rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--brown);
+      color: var(--ink);
       margin-bottom: 10px;
     }
 
     .section-title {
-      font-family: 'Cinzel', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: clamp(1.8rem, 4vw, 2.8rem);
       font-weight: 700;
       color: var(--charcoal);
@@ -339,7 +368,7 @@
 
     /* ── SERVICES ── */
     #services {
-  background-image: linear-gradient(rgba(245, 240, 232, 0.45), rgba(245, 240, 232, 0.45)), url('pictures/work1.jpeg');
+  background-image: linear-gradient(rgba(245, 240, 232, 0.45), rgba(245, 240, 232, 0.45)), url('pictures/house1.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -375,7 +404,7 @@
     .service-card:hover { background: var(--charcoal); }
 
     .service-card:hover .service-icon,
-    .service-card:hover .service-title,
+    .service-card:hover .service-title {color: #B3471D}
     .service-card:hover .service-desc {
       color: var(--stone);
     }
@@ -388,10 +417,10 @@
     }
 
     .service-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1rem;
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.3rem;
       font-weight: 700;
-      color: var(--charcoal);
+      color: #B3471D;
       margin-bottom: 10px;
       letter-spacing: 0.05em;
       transition: color 0.2s;
@@ -399,15 +428,18 @@
 
     .service-desc {
       font-size: 1rem;
+      font-weight: 400;
       line-height: 1.6;
-      color: var(--grey);
+      color: var(--ink);
       transition: color 0.2s;
+      width: 100%;
+  text-align: justify;
     }
 
     /* ── GALLERY ── */
 #gallery { background: var(--charcoal); }
 #gallery .section-title { color: var(--stone); }
-#gallery .section-label { color: var(--stone-dark); }
+#gallery .section-label { color: var(--ink); }
 #gallery .title-rule { background: var(--brown); }
 
 .gallery-grid {
@@ -442,7 +474,7 @@
 /* ── GALLERY SLIDER ── */
 #gallery { background: var(--charcoal); }
 #gallery .section-title { color: var(--stone); }
-#gallery .section-label { color: var(--stone-dark); }
+#gallery .section-label { color: var(--ink); }
 #gallery .title-rule { background: var(--brown); }
 
 .slider {
@@ -521,7 +553,7 @@
     #about { background: var(--charcoal); }
 
     #about .section-title { color: var(--stone); }
-    #about .section-label { color: var(--stone-dark); }
+    #about .section-label { color: var(--ink); }
 
     .about-grid {
       display: grid;
@@ -556,7 +588,7 @@
       justify-content: center;
       gap: 12px;
       color: var(--stone-dark);
-      font-family: 'Cinzel', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: 0.8rem;
       letter-spacing: 0.15em;
     }
@@ -685,13 +717,18 @@
     .form-group textarea { height: 130px; resize: vertical; }
 
     .form-submit {
-      font-family: 'Cinzel', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: 0.8rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--cream);
+      color:  #3A3536;
+      background: #D6D6D6;
+      padding: 16px 44px;
+      border: 2px solid var(--brown);
+      text-decoration: none;
+      /* color: var(--cream);
       background: var(--charcoal);
-      border: 2px solid var(--charcoal);
+      border: 2px solid var(--charcoal); */
       padding: 16px 40px;
       cursor: pointer;
       transition: background 0.25s, color 0.25s;
@@ -699,8 +736,9 @@
     }
 
     .form-submit:hover {
-      background: var(--brown);
-      border-color: var(--brown);
+      background: #B3471D;
+  color: #cdcfd0;
+  border-color: #cdcfd0;
     }
 
     /* ── FOOTER ── */
@@ -725,7 +763,7 @@
     .footer-logo img { height: 40px; filter: grayscale(30%) brightness(0.85); }
 
     .footer-logo-name {
-      font-family: 'Cinzel', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: 0.9rem;
       color: var(--stone);
       letter-spacing: 0.1em;
@@ -743,7 +781,7 @@
     }
 
     .footer-links a {
-      font-family: 'Cinzel', serif;
+      font-family: 'Roboto Slab', serif;
       font-size: 0.7rem;
       letter-spacing: 0.15em;
       color: var(--grey);
@@ -760,9 +798,9 @@
   <!-- ═══ NAV ═══ -->
   <nav>
     <a href="#" class="nav-logo">
-      <img src="logo.jpg" alt="Piston Stone Masonry Logo" />
+      <!-- <img src="logo.jpg" alt="Piston Stone Masonry Logo" /> -->
       <div class="nav-logo-text">
-        <span class="pi">π</span> Stone Masonry.ca
+        Pi Stone Masonry.ca
         <span>Stone Masonry · Ontario</span>
       </div>
     </a>
@@ -792,8 +830,8 @@
   <!-- ═══ HERO ═══ -->
   <section class="hero">
     <div class="hero-content">
-      <img src="logo.jpg" alt="Piston Stone Masonry" class="hero-logo" />
-      <h1>Stone Masonry<em>Built to Last</em></h1>
+      <!-- <img src="logo.jpg" alt="Piston Stone Masonry" class="hero-logo" /> -->
+      <h1 ><span class="logo-badge">Pi Stone Masonry</span> <em style="display: block; font-size: 0.7em; font-weight: 700; font-style: normal; letter-spacing: 0.15em; color: #B3471D;">Built to Last</em></h1>
       <p class="hero-sub">Expert masonry work for homes & businesses</p>
       <p class="hero-location">📍 Canada-Wide Service · Licensed & Insured</p>
       <a href="#contact" class="hero-cta">Request a Free Quote</a>
@@ -810,7 +848,7 @@
 
       <div class="services-grid">
         <div class="service-card">
-  <span class="service-icon">⬜ ⬛</span>
+  <span class="service-icon">⬜</span>
   <h3 class="service-title">Stone Work</h3>
   <p class="service-desc">Custom stonework for walls, facades, fireplaces, and feature walls. We source and lay natural and manufactured stone to bring lasting beauty to any project.</p>
 </div>
@@ -850,21 +888,33 @@
   <!-- ═══ GALLERY ═══ -->
 <section id="gallery">
   <div class="section-wrap">
-    <p class="section-label">Our Work</p>
+    <p class="section-label" style="color: #B3471D;">Our Work</p>
     <h2 class="section-title">Project Gallery</h2>
     <div class="title-rule"></div>
 
     <div class="slider">
       <button class="slider-btn prev" id="prevBtn">&#8592;</button>
 
-      <div class="slider-track">
-        <img src="pictures/work1.jpeg" alt="Project 1" class="slide active" />
-        <img src="pictures/work2.jpeg" alt="Project 2" class="slide" />
-        <img src="pictures/work3.jpeg" alt="Project 3" class="slide" />
-        <img src="pictures/work4.jpeg" alt="Project 4" class="slide" />
-        <img src="pictures/work5.jpeg" alt="Project 5" class="slide" />
-        <img src="pictures/work6.jpeg" alt="Project 6" class="slide" />
-      </div>
+     <div class="slider-track">
+  <img src="pictures/house1.jpg"  alt="Stone facade modern home"     class="slide active" />
+  <img src="pictures/work1.jpg"   alt="Stone masonry project"        class="slide" />
+  <img src="pictures/work2.jpeg"  alt="Brick work project"           class="slide" />
+  <img src="pictures/work4.jpeg"  alt="Masonry construction"         class="slide" />
+  <img src="pictures/work5.jpeg"  alt="Stone wall project"           class="slide" />
+  <img src="pictures/work6.jpeg"  alt="Commercial masonry"           class="slide" />
+  <img src="pictures/work7.jpeg"  alt="Stone building exterior"      class="slide" />
+  <img src="pictures/work8.jpeg"  alt="Commercial stone facade"      class="slide" />
+  <img src="pictures/work12.png"  alt="Luxury stone home"            class="slide" />
+  <img src="pictures/work26.jpeg" alt="Stone and brick exterior"     class="slide" />
+  <img src="pictures/work31.jpeg" alt="Classic stone home"           class="slide" />
+  <img src="pictures/work32.jpeg" alt="Stone entrance and steps"     class="slide" />
+  <img src="pictures/work33.jpeg" alt="Brick and stone facade"       class="slide" />
+  <img src="pictures/work34.jpeg" alt="Modern stone home"            class="slide" />
+  <img src="pictures/work35.jpeg" alt="Stone masonry exterior"       class="slide" />
+  <img src="pictures/work37.jpeg" alt="Contemporary stone build"     class="slide" />
+  <img src="pictures/work38.jpeg" alt="Stone home with pool"         class="slide" />
+  <img src="pictures/work39.jpeg" alt="Modern stone exterior"        class="slide" />
+</div>
 
       <button class="slider-btn next" id="nextBtn">&#8594;</button>
 
@@ -880,17 +930,17 @@
       <div class="about-grid">
         <div class="about-photo-wrap">
           <div class="about-photo-placeholder">
-            <img src="Igor photo.png" alt="Igor" class="about-photo" />
+            <img src="work37.jpeg" alt="Igor" class="about-photo" />
           </div>
           <div class="about-frame"></div>
         </div>
         <div class="about-text">
-          <p class="section-label">The Craftsmen</p>
+          <p class="section-label" style="color: #B3471D;">The Craftsmen</p>
           <h2 class="section-title">About our Team</h2>
           <div class="title-rule"></div>
-          <p>Masonry is hands-on work and we take pride in every job — big or small. 
+          <p style="text-align: justify; font-weight: 400;">Masonry is hands-on work and we take pride in every job — big or small. 
             </p>
-          <p>We build things that last. With 4 years of experience, we've built patios, repaired foundations, laid walkways, and restored walls that will outlast us all. 
+          <p style="text-align: justify; font-weight: 400;">We build things that last. With 4 years of experience, we've built patios, repaired foundations, laid walkways, and restored walls that will outlast us all. 
             If you want it done properly, we're your crew.</p>
           <div class="about-details">
             <div class="about-detail">
@@ -919,12 +969,12 @@
   <!-- ═══ CONTACT ═══ -->
   <section id="contact">
     <div class="section-wrap">
-      <p class="section-label">Get In Touch</p>
+      <p class="section-label" style="color: #B3471D;">Get In Touch</p>
       <h2 class="section-title">Request a Call Back</h2>
       <div class="title-rule"></div>
       <div class="contact-grid">
         <div class="contact-info">
-          <p>Fill out the form and we will call you back to discuss your project and arrange a free on-site estimate.</p>
+          <p style="text-align: justify; color: #050505;">Fill out the form and we will call you back to discuss your project and arrange a free on-site estimate.</p>
           <div class="contact-links">
             <a href="tel:+14379820807" class="contact-link">
               <span class="cl-icon">📞</span>
@@ -962,7 +1012,7 @@
         </form>
         <div id="thankYou" style="display:none; text-align:center; padding: 40px 20px;">
   <div style="font-size: 3rem; margin-bottom: 16px;">✅</div>
-  <h3 style="font-family: 'Cinzel', serif; color: var(--charcoal); font-size: 1.5rem; margin-bottom: 12px;">
+  <h3 style="font-family: 'Roboto Slab', serif; color: var(--charcoal); font-size: 1.5rem; margin-bottom: 12px;">
     Request Received!
   </h3>
   <p style="font-size: 1.1rem; color: var(--grey); line-height: 1.8;">
@@ -977,10 +1027,10 @@
   <!-- ═══ FOOTER ═══ -->
   <footer>
     <div class="footer-logo">
-      <img src="logo.jpg" alt="Piston" />
+      <!-- <img src="logo.jpg" alt="Piston" /> -->
       <span class="footer-logo-name">pistonemasonry.ca</span>
     </div>
-    <span class="footer-copy">© 2025  <span class="pi">π</span> Stone Masonry.ca </span>
+    <span class="footer-copy">© 2026  Pi Stone Masonry.ca </span>
     <div class="footer-links">
       <a href="#services">Services</a>
       <a href="#about">About</a>
@@ -988,6 +1038,13 @@
     </div>
   </footer>
 
+  <!-- LIGHTBOX -->
+<div id="lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.95); z-index:1000; align-items:center; justify-content:center;">
+  <button id="lightboxClose" style="position:absolute; top:20px; right:28px; background:none; border:none; color:#cdcfd0; font-size:2.5rem; cursor:pointer; line-height:1;">×</button>
+  <button id="lightboxPrev" style="position:absolute; left:20px; background:none; border:none; color:#cdcfd0; font-size:2.5rem; cursor:pointer;">&#8592;</button>
+  <button id="lightboxNext" style="position:absolute; right:20px; background:none; border:none; color:#cdcfd0; font-size:2.5rem; cursor:pointer;">&#8594;</button>
+  <img id="lightboxImg" src="" style="max-width:90vw; max-height:90vh; object-fit:contain; display:block;" />
+</div>
  
   <script>
   // ── Burger menu ──
@@ -1051,7 +1108,62 @@ document.getElementById('nextBtn').addEventListener('click', () => goTo(current 
 
 // auto advance every 4 seconds
 setInterval(() => goTo(current + 1), 4000);
+
+
+// ── Lightbox ──
+const lightbox    = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+let lightboxIndex = 0;
+
+function getAllSlides() {
+  return Array.from(document.querySelectorAll('.slide'));
+}
+
+function openLightbox(index) {
+  const slides = getAllSlides();
+  lightboxIndex = index;
+  lightboxImg.src = slides[lightboxIndex].src;
+  lightbox.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function lightboxMove(dir) {
+  const slides = getAllSlides();
+  lightboxIndex = (lightboxIndex + dir + slides.length) % slides.length;
+  lightboxImg.src = slides[lightboxIndex].src;
+}
+
+// attach clicks using event delegation on slider-track
+document.querySelector('.slider-track').addEventListener('click', function(e) {
+  if (e.target.classList.contains('slide')) {
+    openLightbox(current); 
+  }
+});
+
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+document.getElementById('lightboxPrev').addEventListener('click', () => lightboxMove(-1));
+document.getElementById('lightboxNext').addEventListener('click', () => lightboxMove(1));
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (lightbox.style.display === 'flex') {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lightboxMove(-1);
+    if (e.key === 'ArrowRight') lightboxMove(1);
+  }
+});
+
+
 </script>
+
 
 </body>
 </html>
